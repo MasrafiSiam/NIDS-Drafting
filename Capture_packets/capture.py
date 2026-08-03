@@ -1,6 +1,5 @@
-from scapy.all import sniff
+from scapy.all import sniff, wrpcap
 
-def process_packet(packet):
-    print(packet.summary())
+packets = sniff(count=100)
 
-sniff(prn=process_packet, store=False)
+wrpcap("capture.pcap", packets)
