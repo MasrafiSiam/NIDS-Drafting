@@ -1,5 +1,5 @@
 from scapy.all import sniff, wrpcap
 
-packets = sniff(count=500)
+packets = sniff(count=1000)
 
 wrpcap("capture.pcap", packets)
